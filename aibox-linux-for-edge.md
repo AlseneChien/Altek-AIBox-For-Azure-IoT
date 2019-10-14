@@ -4,9 +4,7 @@ device: {Altek AIBox}
 language: {c/c++}
 ---
 
-*We highly recommend keeping this document current, and Microsoft reserves a right to remove devices and documents from the Azure IoT Device Catalog if document contains broken URL links, incorrect information etc.*
-
-Run a simple {enter the language used to you edge device} sample on {enter your device name here} device running {enter the OS name running on edge device. Specify distribution or Windows SKU information. Ex: Ubuntu Sever 16.04, Windows 10 IoT Core. Only [Tier 1 OS](https://docs.microsoft.com/en-us/azure/iot-edge/support) is allowed}
+Run a simple python sample on Altek AIBox device running embedded Linux by Yocto
 ===
 ---
 
@@ -31,7 +29,7 @@ Run a simple {enter the language used to you edge device} sample on {enter your 
 
 **About this document**
 
-This document describes how to connect {enter your device name here} device running {enter the OS name running on edge device} with Azure IoT Edge Runtime pre-installed and Device Management. This multi-step process includes:
+This document describes how to connect Altek AIBox device running embedded Linux by Yocto with Azure IoT Edge Runtime pre-installed and Device Management. This multi-step process includes:
 
 -   Configuring Azure IoT Hub
 -   Registering your IoT device
