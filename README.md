@@ -1,2 +1,2 @@
 # Altek-AIBox
-This is 1st version for AIBox introduction
+Quick started guiding for Altek AIBox
