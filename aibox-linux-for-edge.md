@@ -92,6 +92,7 @@ At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you
 You have to input username/password for Onvif IPCamera  to login. To simplify operating scenarios, all IPCameras’ account recommend be identical. Then, click IPC link, preview start
 
 
+
 <a name="Manual"></a>
 # Step 3: Manual Test for Azure IoT Edge on device
 
