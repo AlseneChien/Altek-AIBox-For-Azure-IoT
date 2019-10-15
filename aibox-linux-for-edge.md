@@ -71,15 +71,26 @@ Please input avaiable SSID/Password for available Wi-Fi AP
 
 ( Recommend AIBox and IPCameras ould connect to the same Wi-Fi AP)
 
-![](./images/ap_webpage1.png) ![](./images/ap_webpage3.png)
+![](./images/ap_webpage1.png) 
 
 Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config webpage (http://192.168.143.1:9080)
 ![](./images/ap_webpage2.png)
 
 
 #### Ethernet use case
-If ethernet is connected to AIBOX already, browser will be redirected to IPC preview/configure webpage automatically.
+If ethernet is connected to AIBOX already, browser will be redirected to login webpage automatically.
+Please input Username/Password as "admin/admin“, then press "Login" to enter IPC preview/configure webpage.
+
 ( Recommend AIBox and IPCameras ould connect to the same ethernet router)
+![](./images/ap_webpage3.png)
+
+### 3. Config your IPCamera via Web UI
+At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you can press "Refresh“ to scan again.
+
+ ![](./images/ap_webpage4.png)
+
+You have to input username/password for Onvif IPCamera  to login. To simplify operating scenarios, all IPCameras’ account recommend be identical. Then, click IPC link, preview start
+
 
 <a name="Manual"></a>
 # Step 3: Manual Test for Azure IoT Edge on device
