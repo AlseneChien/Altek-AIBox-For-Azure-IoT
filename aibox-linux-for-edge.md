@@ -64,6 +64,7 @@ You may refer to user manual to setup your Onvif IPCamera, and ensure your IPCam
 
 #### Wi-Fi use case
 From your PC, connect to a Wi-Fi network named altek_edgebox**** (**** is the last 4 characters of the device’s Wi-Fi MAC address, e.g. altek_edgebox9613).
+
 ![](./images/Pc_network.png)
 
 Then, open web browser (e.g. Chrome) by link http://192.168.143.1/ to enter AP setting webpage
@@ -74,6 +75,7 @@ Please input avaiable SSID/Password for available Wi-Fi AP
 ![](./images/ap_webpage1.png) 
 
 Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config webpage (http://192.168.143.1:9080)
+
 ![](./images/ap_webpage2.png)
 
 
@@ -82,6 +84,7 @@ If ethernet is connected to AIBOX already, browser will be redirected to login w
 Please input Username/Password as "admin/admin“, then press "Login" to enter IPC preview/configure webpage.
 
 ( Recommend AIBox and IPCameras ould connect to the same ethernet router)
+
 ![](./images/ap_webpage3.png)
 
 ### 3. Config your IPCamera via Web UI
