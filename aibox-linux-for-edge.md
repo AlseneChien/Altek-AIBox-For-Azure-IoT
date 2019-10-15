@@ -96,6 +96,9 @@ You have to input username/password for Onvif IPCamera  to login. To simplify op
 
  ![](./images/ap_webpage5.png)
 
+ ### 4. To Linux Shell via ssh
+ To be updated
+
 <a name="Manual"></a>
 # Step 3: Manual Test for Azure IoT Edge on device
 
