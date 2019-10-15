@@ -42,27 +42,44 @@ You should have the following items ready before beginning the process:
 -   [Add the Edge Modules](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux#deploy-a-module)
 -   [Altek AIBox device](https://store.altek.com.tw/qualcomm/product/ai-box-altek#TECH-NODE)
 -   x1~x4 IPCam, compatible with Onvif profile-s and RTSP
--   {{Please specify if any other software(s) or hardware(s) are required.}}
+-   A router for wired/wireless connection to internet
 
 <a name="PrepareDevice"></a>
 # Step 2: Prepare your Device
 
-This section will guide you to setup connection of IPCamera and AIBox. 
+This section will guide you to setup connection between IPCamera and AIBox. 
 
-Before starting setup, you may refer to below LED indicator/ Button scenarios as below
+Before starting setup, you may refer to below LED indicator/ Button scenarios at AIBox
  ![](./images/edgebox_led.png)
 
  ![](./images/aibox_housing.png)
 
-## What you will do?
+## What you will do
 
 ### 1. Connect your IPCamera to Wi-Fi AP or ethernet router.
 
-You may refer to user manual to setup your IPCamera, and ensure your IPCamera can be accessed via OnVIF + RTSP protocol.
+You may refer to user manual to setup your Onvif IPCamera, and ensure your IPCamera can be accessed via OnVIF + RTSP protocol.
 
-### 2. Setup your network connection for AIBox
+### 2. Connect your AIBox to network
+
+#### Wi-Fi use case
+From your PC, connect to a Wi-Fi network named altek_edgebox**** (**** is the last 4 characters of the device’s Wi-Fi MAC address, e.g. altek_edgebox9613).
+![](./images/Pc_network.png)
+
+Then, open web browser (e.g. Chrome) by link http://192.168.143.1/ to enter AP setting webpage
+Please input avaiable SSID/Password for available Wi-Fi AP
+
+( Recommend AIBox and IPCameras ould connect to the same Wi-Fi AP)
+
+![](./images/ap_webpage1.png) ![](./images/ap_webpage3.png)
+
+Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config webpage (http://192.168.143.1:9080)
+![](./images/ap_webpage2.png)
 
 
+#### Ethernet use case
+If ethernet is connected to AIBOX already, browser will be redirected to IPC preview/configure webpage automatically.
+( Recommend AIBox and IPCameras ould connect to the same ethernet router)
 
 <a name="Manual"></a>
 # Step 3: Manual Test for Azure IoT Edge on device
