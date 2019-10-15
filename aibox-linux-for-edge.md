@@ -53,7 +53,13 @@ You should have the following items ready before beginning the process:
 <a name="PrepareDevice"></a>
 # Step 2: Prepare your Device
 
--   {{Write down the instructions required to setup, configure and connect your device. Please use external links when possible pointing to your own page with device preparation steps.}}
+This section will guide you to setup connection of IPCamera and AIBox. 
+
+## What you will do?
+
+### 1. Connect your IPCamera to Wi-Fi AP or ethernet router.
+
+You may refer to user manual of IPCamera to setup your IPCamera, and ensure your IPCamera can be accessed via OnVIF + RTSP protocol.
 
 <a name="Manual"></a>
 # Step 3: Manual Test for Azure IoT Edge on device
