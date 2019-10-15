@@ -49,11 +49,20 @@ You should have the following items ready before beginning the process:
 
 This section will guide you to setup connection of IPCamera and AIBox. 
 
+Before starting setup, you may refer to below LED indicator/ Button scenarios as below
+ ![](./images/edgebox_led.png)
+
+ ![](./images/aibox_housing.png)
+
 ## What you will do?
 
 ### 1. Connect your IPCamera to Wi-Fi AP or ethernet router.
 
 You may refer to user manual to setup your IPCamera, and ensure your IPCamera can be accessed via OnVIF + RTSP protocol.
+
+### 2. Setup your network connection for AIBox
+
+
 
 <a name="Manual"></a>
 # Step 3: Manual Test for Azure IoT Edge on device
