@@ -54,16 +54,16 @@ Before starting setup, you may refer to below LED indicator/ Button scenarios at
 
  ![](./images/aibox_housing.png)
 
-## What you will do
+## What you will do for network configuration
 
-### 1. Network setup for AIBox 
+### 2.1 Network setup for AIBox 
 
-#### 1.1 Connect your AIBox with PC via Wi-Fi
+#### 2.1.1 Connect your AIBox with PC via Wi-Fi
 At your PC side, please connect to a Wi-Fi network, named as altek_edgebox**** (**** is the last 4 characters of the device’s Wi-Fi MAC address, e.g. altek_edgebox9613). Then, you can follow step 1.1 or 1.2 to redirect AIBox network to Wi-Fi AP or Ethernet router.
 
 ![](./images/Pc_network.png)
 
-#### 1.2 Direct your AIBox to a Wi-Fi AP
+#### 2.1.2 Direct your AIBox to a Wi-Fi AP
 
 Open web browser (e.g. Chrome) by link http://192.168.143.1/ to  AP setting webpage. 
 Then, input SSID/Password for one internet-available Wi-Fi AP. AIBox nework will be redirected to your assigned Wi-Fi AP.
@@ -75,14 +75,14 @@ Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config
 ![](./images/ap_webpage2.png)
 
 
-#### 1.3 Direct your AIBox to an ethernet router
+#### 2.1.3 Direct your AIBox to an ethernet router
 
 If ethernet is connected to AIBOX already, open web browser (e.g. Chrome) by link http://192.168.143.1/, it will be redirected to login webpage automatically.
 Please input Username/Password as "admin/admin“, then press "Login" to enter IPC preview/configure webpage.
 
 ![](./images/ap_webpage3.png)
 
- #### 1.4 Confirm network configuration by Linux shell over SSH
+ #### 2.1.4 Confirm network configuration by Linux shell over SSH
 If you already complete above network settings, you can enter linux shell via SSH.
 Information for SSH access will be below
 -  IP of SoftAP at AIBox: 192.168.143.1
@@ -90,14 +90,16 @@ Information for SSH access will be below
 -  Password: oelinux123
 
 Terminal, like putty, will be available for ssh access
+
  ![](./images/putty.png)
 
 Once ssh is available, you can use "ifconfig" to check network configurations
+
 ![](./images/ifconfig.png)
 
 
 
-### 2. Connect your IPCamera to Wi-Fi AP or ethernet router.
+### 2.2 Connect your IPCamera to Wi-Fi AP or ethernet router.
 
 You may prepare x1~x4 IPCameras, compatible with OnVIF + RTSP protocol. 
 Please refer to user manual of IPCameras to setup your IPCamera, and direct your camera to to the same Wi-Fi AP or ethernet router as AIBox.
@@ -111,7 +113,7 @@ Following cameras are validated with AIBox for your reference.
 - Vivotek: CC8160
 
 
-### 3. Config your IPCamera via Web UI
+### 2.3 Config your IPCamera via Web UI
 At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you can press "Refresh“ to scan again.
 
  ![](./images/ap_webpage4.png)
@@ -120,6 +122,10 @@ You have to input username/password for Onvif IPCamera  to login. To simplify op
 
  ![](./images/ap_webpage5.png)
 
+### 2.4 Reset your network configuration
+Pinghole reset button as below. Network configuration will be reset
+
+![](./images/pinghole.png)
 
 <a name="Manual"></a>
 # Step 3: Manual Test for Azure IoT Edge on device
