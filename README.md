@@ -45,4 +45,4 @@ With Linux running natively and industry design best practices already applied, 
 - Status LED: 1 x with a RG 2 color LED (Red for FW update, Green for normal, Orange for configure network)
 
 ## Software Document
-- [aibox-linux-for-edge.md](./aibox-linux-for-edge.md)
+- [Quick Start Guiding for AIBox](./aibox-linux-for-edge.md)
