@@ -56,21 +56,17 @@ Before starting setup, you may refer to below LED indicator/ Button scenarios at
 
 ## What you will do
 
-### 1. Connect your IPCamera to Wi-Fi AP or ethernet router.
+### 1. Network setup for AIBox 
 
-You may refer to user manual to setup your Onvif IPCamera, and ensure your IPCamera can be accessed via OnVIF + RTSP protocol.
-
-### 2. Connect your AIBox to network
-
-#### Wi-Fi use case
-From your PC, connect to a Wi-Fi network named altek_edgebox**** (**** is the last 4 characters of the device’s Wi-Fi MAC address, e.g. altek_edgebox9613).
+#### 1.1 Connect your AIBox with PC via Wi-Fi
+At your PC side, please connect to a Wi-Fi network, named as altek_edgebox**** (**** is the last 4 characters of the device’s Wi-Fi MAC address, e.g. altek_edgebox9613). Then, you can follow step 1.1 or 1.2 to redirect AIBox network to Wi-Fi AP or Ethernet router.
 
 ![](./images/Pc_network.png)
 
-Then, open web browser (e.g. Chrome) by link http://192.168.143.1/ to enter AP setting webpage
-Please input avaiable SSID/Password for available Wi-Fi AP
+#### 1.2 Direct your AIBox to a Wi-Fi AP
 
-( Recommend AIBox and IPCameras ould connect to the same Wi-Fi AP)
+Open web browser (e.g. Chrome) by link http://192.168.143.1/ to  AP setting webpage. 
+Then, input SSID/Password for one internet-available Wi-Fi AP. AIBox nework will be redirected to your assigned Wi-Fi AP.
 
 ![](./images/ap_webpage1.png) 
 
@@ -79,13 +75,41 @@ Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config
 ![](./images/ap_webpage2.png)
 
 
-#### Ethernet use case
-If ethernet is connected to AIBOX already, browser will be redirected to login webpage automatically.
+#### 1.3 Direct your AIBox to an ethernet router
+
+If ethernet is connected to AIBOX already, open web browser (e.g. Chrome) by link http://192.168.143.1/, it will be redirected to login webpage automatically.
 Please input Username/Password as "admin/admin“, then press "Login" to enter IPC preview/configure webpage.
 
-( Recommend AIBox and IPCameras ould connect to the same ethernet router)
-
 ![](./images/ap_webpage3.png)
+
+ #### 1.4 Confirm network configuration by Linux shell over SSH
+If you already complete above network settings, you can enter linux shell via SSH.
+Information for SSH access will be below
+-  IP of SoftAP at AIBox: 192.168.143.1
+-  Account: root
+-  Password: oelinux123
+
+Terminal, like putty, will be available for ssh access
+ ![](./images/putty.png)
+
+Once ssh is available, you can use "ifconfig" to check network configurations
+![](./images/ifconfig.png)
+
+
+
+### 2. Connect your IPCamera to Wi-Fi AP or ethernet router.
+
+You may prepare x1~x4 IPCameras, compatible with OnVIF + RTSP protocol. 
+Please refer to user manual of IPCameras to setup your IPCamera, and direct your camera to to the same Wi-Fi AP or ethernet router as AIBox.
+
+Following cameras are validated with AIBox for your reference.
+- Sony: SNC-EB630
+- Panasonic: WV-D3131L
+- HIKVISION: DS-2CD1021FD-IW1, DS-2CD2042WD-I
+- Dahua: HFW4233F-ZSA, HDW-4438C-A, HDW-4438C-A-V2
+- Axis: M3007, M3045V
+- Vivotek: CC8160
+
 
 ### 3. Config your IPCamera via Web UI
 At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you can press "Refresh“ to scan again.
@@ -96,8 +120,6 @@ You have to input username/password for Onvif IPCamera  to login. To simplify op
 
  ![](./images/ap_webpage5.png)
 
- ### 4. To Linux Shell via ssh
- To be updated
 
 <a name="Manual"></a>
 # Step 3: Manual Test for Azure IoT Edge on device
@@ -113,8 +135,7 @@ The following components come pre-installed or at the point of distribution on t
 
 -   Azure IoT Edge Security Daemon
 -   Daemon configuration file
--   Moby container management system
--   A version of `hsmlib` 
+    ontainer management system  A version of `hsmlib` 
 
 *Edge Runtime Enabled:*
 
