@@ -59,7 +59,7 @@ Before starting setup, you may refer to below LED indicator/ Button scenarios at
 ### 2.1 Network setup for AIBox 
 
 #### 2.1.1 Connect your AIBox with PC via Wi-Fi
-At your PC side, please connect to a Wi-Fi network, named as altek_edgebox**** (**** is the last 4 characters of the device’s Wi-Fi MAC address, e.g. altek_edgebox9613). Then, you can follow step 1.1 or 1.2 to redirect AIBox network to Wi-Fi AP or Ethernet router.
+At your PC side, please connect to a Wi-Fi network, named as altek_edgebox**** (**** is the last 4 characters of the device’s Wi-Fi MAC address, e.g. altek_edgebox9613). Then, you can follow step 1.1 or 1.2 to redirect AIBox network to Wi-Fi AP or Ethernet router. Password of AIBox AP is "12345678"
 
 ![](./images/Pc_network.png)
 
@@ -78,11 +78,14 @@ Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config
 #### 2.1.3 Direct your AIBox to an ethernet router
 
 If ethernet is connected to AIBOX already, open web browser (e.g. Chrome) by link http://192.168.143.1/, it will be redirected to login webpage automatically.
+
+#### 2.1.4  Login for IPC preview/configure webpage
+
 Please input Username/Password as "admin/admin“, then press "Login" to enter IPC preview/configure webpage.
 
 ![](./images/ap_webpage3.png)
 
- #### 2.1.4 Confirm network configuration by Linux shell over SSH
+ #### 2.1.5 Confirm network configuration by Linux shell over SSH
 If you already complete above network settings, you can enter linux shell via SSH.
 Information for SSH access will be below
 -  IP of SoftAP at AIBox: 192.168.143.1
@@ -147,7 +150,7 @@ The following components come pre-installed or at the point of distribution on t
 
 **Check the iotedge daemon command:** 
 
-Open the command prompt on your IoT Edge device , confirm that the Azure IoT edge Daemon is under running state
+Open the command prompt (Refer to "2.1.5") on your IoT Edge device , confirm that the Azure IoT edge Daemon is under running state
 
     systemctl status iotedge
 
@@ -170,61 +173,15 @@ On the device details page of the Azure, you should see the runtime modules - ed
 
 **Description:** A device that can perform basic device management operations (Reboot and Firmware update) triggered by messages from IoT Hub.
 
-## 3.2.1 Firmware Update (Using Microsoft SDK Samples):
+## 3.2.1 Firmware Update 
 
-Specify the path {{enter the path}} where the firmwareupdate client components are installed.
+To Be Updated
 
-To run the simulated device application, open a shell or command prompt window and navigate to the **iot-hub/Tutorials/FirmwareUpdate** folder in the Node.js project you downloaded. Then run the following commands:
+## 3.2.2 Reboot 
 
-    npm install
-    node SimulatedDevice.js "{your device connection string}"
+To Be Updated
 
-To run the back-end application, open another shell or command prompt window. Then navigate to the **iot-hub/Tutorials/FirmwareUpdate** folder in the Node.js project you downloaded. Then run the following commands:
-
-    npm install
-    node ServiceClient.js "{your service connection string}"
-
-IoT device client will get the message and report the status to the device twin.
-
- ![](./images/devicetwin.png)
-
-**Update firmware**
-
-Confirm the IoT hub, Device ID, method name and method payload as below:
-
--   Press “call Method” button
--   Check the returning status as below:
-
- ![](./images/firmware.png)
-
-
-## 3.2.2 Reboot (Using Microsoft SDK Samples):
-
-Specify the path {{enter the path}} where the components are installed 
-
-Confirm the IoT hub, Device ID, method name as below:
-
--   Press “call Method” button
--   Check the returning status as below:
-
- ![](./images/reboot.png)
-
-
-IoT device client will get the message and report the status to the device twin.
-
- ![](./images/devicetwinmessage.png)
   
-## 3.3.3 Firmware Update (Modified SDK samples/Custom made application):
-
-If the Client components are custom made please add the steps to execute the Firmware Update through Device Twin.
-
-**Note**: Client Components must be shipped with the device 
-
-## 3.3.4 Reboot (Modified SDK samples/Custom made application):
-
-If the Client components are custom made please add the steps to execute the Device Reboot through Direct Methods
-
-**Note**: Client Components must be shipped with the device 
 
 <a name="NextSteps"></a>
 # Step 4: Next steps
