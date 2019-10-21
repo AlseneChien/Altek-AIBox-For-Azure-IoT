@@ -39,13 +39,13 @@ The AI Models, tarined by Caffe/Caffe2, TensorFlow, and ONNX, are allowable to b
 Here is a [list](https://azure.github.io/Vision-AI-DevKit-Pages/docs/frameworks/) to show neural networks and runtimes, run at device DSP (SNPE)
 
 ## 1.3 Vision AI Model layout
-Vision AI models, which run on AIBox, consists of three files. These 3 files need be pushed into device (/data/misc/camera) before AI running
+Vision AI models, which run on AIBox, consists of three files. Need prepare these 3 files and push into device (/data/misc/camera) before AI running
 
 - .DLC file - [containing the model](#Introduction)
 - .TXT file - [containing a list of the objects recognized by the model](./VAM/labels.txt)
 - .json file - [containing the VAM engine configuration](./VAM/va-snpe-engine-library_config.json)
 
-Some key attributes of .json file breakdowb as below
+Some key attributes of .json file breakdowb as below. User have to customize attributes, depending on AI models' need.
 - "Engine", 0: Mnet / 1: Mnet_SSD / 2: Squeezenet
 - “NetworkIO”, 0: UserBufer / 1: ITensor
 - “ScaleWidth” / “ScaleHeight”, ScaleWidth / ScaleHeight
