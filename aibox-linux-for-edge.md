@@ -85,6 +85,7 @@ Please input Username/Password as "admin/admin“, then press "Login" to enter I
 
 ![](./images/ap_webpage3.png)
 
+<a name="2_1_5_ToSSH"></a>
  #### 2.1.5 Confirm network configuration by Linux shell over SSH
 If you already complete above network settings, you can enter linux shell via SSH.
 Information for SSH access will be below
@@ -150,7 +151,7 @@ The following components come pre-installed or at the point of distribution on t
 
 **Check the iotedge daemon command:** 
 
-Open the command prompt (Refer to "2.1.5") on your IoT Edge device , confirm that the Azure IoT edge Daemon is under running state
+Open the command prompt (Refer to ["2.1.5 Confirm network configuration by Linux shell over SSH"](#2_1_5_ToSSH)) on your IoT Edge device , confirm that the Azure IoT edge Daemon is under running state
 
     systemctl status iotedge
 
@@ -191,7 +192,7 @@ Once you shared the documents with us, we will contact you in the following 48 t
 <a name="Step-5-Troubleshooting"></a>
 # Step 5: Troubleshooting
 
-Please contact engineering support on **<mailto:iotcert@microsoft.com>** for help with troubleshooting.
+Please contact engineering support on **<alsenechien@altek.com.tw>** for help with troubleshooting.
   
 [setup-devbox-linux]: https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md
 [lnk-setup-iot-hub]: ../setup_iothub.md
