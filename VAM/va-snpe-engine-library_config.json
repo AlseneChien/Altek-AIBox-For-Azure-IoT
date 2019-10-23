@@ -10,7 +10,7 @@
     "RedMean":128,
     "UseNorm":1,
     "TargetFPS":30,
-    "ConfThreshold":0.4,
+    "ConfThreshold":0.65,
     "InputLayers":"Preprocessor/sub:0",
     "OutputLayers":["add_6", "Postprocessor/BatchMultiClassNonMaxSuppression"],
     "ResultLayers":["Postprocessor/BatchMultiClassNonMaxSuppression_scores", "Postprocessor/BatchMultiClassNonMaxSuppression_boxes", "detection_classes:0"],

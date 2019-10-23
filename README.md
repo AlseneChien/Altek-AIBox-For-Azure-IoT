@@ -46,4 +46,4 @@ With Linux running natively and industry design best practices already applied, 
 
 ## Software Document
 - [Quick Start Guiding for AIBox](./aibox-linux-for-edge.md)
-- [AI model conversion](./AI_Model_to_AIBox_via_Azure_cloud.md)
+- [How to have AI model running at AIBox](./AI_Model_to_AIBox_via_Azure_cloud.md)

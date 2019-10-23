@@ -194,7 +194,7 @@ To Be Updated
 <a name="NextSteps"></a>
 # Step 4: Next steps
 
-Once you shared the documents with us, we will contact you in the following 48 to 72 business hours with next steps.
+You can move to [How to have AI model running at AIBox](./AI_Model_to_AIBox_via_Azure_cloud.md)
 
 <a name="Step-5-Troubleshooting"></a>
 # Step 5: Troubleshooting
