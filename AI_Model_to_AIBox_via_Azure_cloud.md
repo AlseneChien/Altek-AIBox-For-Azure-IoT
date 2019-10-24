@@ -6,11 +6,9 @@ How to have AI model running at AIBox
 # Table of Contents
 
 -   [Introduction](#Introduction)
--   [Step 1: Prepare your AI Models for AIBox](#Prerequisites)
--   [Step 2: Deploy your AI Model to Device](#PrepareDevice)
--   [Step 3: Manual Test for Azure IoT Edge on device](#Manual)
--   [Step 4: Next Steps](#NextSteps)
--   [Step 5: Troubleshooting](#Step-5-Troubleshooting)
+-   [Part 1: Prepare your AI Models for AIBox](#part_1)
+-   [Part 2: Deply AI Model and Start Inference Running](#part_2)
+-   [Part 3: Troubleshooting](#Step-5-Troubleshooting)
 
 
 <a name="Introduction"></a>
@@ -20,7 +18,7 @@ How to have AI model running at AIBox
 
 This document describes how to cover your AI Models, then deploy models to your AIBox via Azure Iot Hub.
 
-<a name="Prerequisites"></a>
+<a name="part_1"></a>
 # Part 1: Prepare your AI Models for AIBox
 ## 1.1 Install SNPE SDK
 
@@ -105,23 +103,21 @@ https://developer.qualcomm.com/docs/snpe/convert_mobilenetssd.html
 Then, you have to modify your own lable.txt and va-snpe-engine-library_config.json to fit model's need, referring to [1.3 Vision AI Model layout](#1_3_Vision_AI_Model_layout)
 
 
-<a name="PrepareDevice"></a>
+<a name="part_2"></a>
 # Part 2: Deply AI Model and Start Inference Running
 
-T..
+## 2.1 Prepare DLC/Config Json/Lable text 
 
-<a name="Manual"></a>
-# Part 3: Manual Test for Azure IoT Edge on device
+You have to prepare your DLC/Config Json/Lable text as [Part 1: Prepare your AI Models for AIBox](#part_1) in advance.
+Then, prepare config file to link camera streaming with inference engine.
 
-...
+## 2.2 Prepare docker container to deploy AI Models
 
-<a name="NextSteps"></a>
-# Step 4: Next steps
+## 2.3 Deploy by Azure Iot Hub
 
-...
 
 <a name="Step-5-Troubleshooting"></a>
-# Step 5: Troubleshooting
+# Step 3: Troubleshooting
 
 Please contact engineering support on **<alsenechien@altek.com.tw>** for help with troubleshooting.
   
