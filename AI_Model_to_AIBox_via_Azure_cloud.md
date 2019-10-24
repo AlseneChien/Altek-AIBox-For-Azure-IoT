@@ -71,20 +71,32 @@ You may searh relative informathin how to install docker at your host.
 
 #### Download and run tensorflow docker images
 To simplify dependences installion of tensorflow, we choose docker container with tensorflow as practice at this scection. 
-- Download (docker pull tensorflow/tensorflow)
-- Run (docker run -it tensorflow/tensorflow bash)
+- Download 
+```
+docker pull tensorflow/tensorflow)
+```
+- Run 
+```
+docker run -it tensorflow/tensorflow bash
+```
 
 #### Download SPNE SDK to host and copy to container
 SPNE SDK have to be installed at the same environment as tensorflow. At this section, we would install SNPE SDK inside docker container.
 - Download SDK from https://developer.qualcomm.com/software/qualcomm-neural-processing-sdk
-- Copy SDK to container (docker cp /path/to/file1 DOCKER_ID:path/to/file2)
+- Copy SDK to container 
+```
+docker cp /path/to/file1 DOCKER_ID:path/to/file2
+```
 
 #### Check and Install SDK dependences to container
 You can use Qualcomm's tool to check dependences installation.
 (https://developer.qualcomm.com/docs/snpe/setup.html)
-- source snpe-X.Y.Z/bin/dependencies.sh
-- source snpe-X.Y.Z/bin/check_python_depends.sh 
-- source bin/envsetup.sh -t $TENSORFLOW_DIR
+
+```
+source snpe-X.Y.Z/bin/dependencies.sh
+source snpe-X.Y.Z/bin/check_python_depends.sh 
+source bin/envsetup.sh -t $TENSORFLOW_DIR
+```
 
 #### Convert Tensort flow MNet model to DLC format
 Refer to below link to conver tensorflow model to DLC

@@ -105,10 +105,15 @@ Once ssh is available, you can use "ifconfig" to check network configurations
 
 If you already [create your own connect string for Auzre IotEdge Device](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux#deploy-a-module), you may use below shell cmd via SSH to update connect string into device.
 
-- sed -i '/ device_connection_string: /c\  device_connection_string: "HostName={hub_name}.azure-devices.net;DeviceId=MyEdgeDeviceName;SharedAccessKey={key}"' /etc/iotedge/config.yaml`
+```
+sed -i '/ device_connection_string: /c\  device_connection_string: "HostName={hub_name}.azure-devices.net;DeviceId=MyEdgeDeviceName;SharedAccessKey={key}"' /etc/iotedge/config.yaml
+```
 
 Then, you can use below cmd to restart IotEdge Service via SSH
-- systemctl restart iotedge.service
+
+```
+systemctl restart iotedge.service
+```
 
 ### 2.2 Connect your IPCamera to Wi-Fi AP or ethernet router.
 
