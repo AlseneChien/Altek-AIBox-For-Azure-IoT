@@ -109,10 +109,13 @@ If you already [create your own connect string for Auzre IotEdge Device](https:/
 sed -i '/ device_connection_string: /c\  device_connection_string: "HostName={hub_name}.azure-devices.net;DeviceId=MyEdgeDeviceName;SharedAccessKey={key}"' /etc/iotedge/config.yaml
 ```
 
-Then, you can use below cmd to restart IotEdge Service via SSH
+Then, you can use below cmd to reboot AIBox via SSH
+Wait for minutes to see all LED off, then have Power-On status
 
 ```
-systemctl restart iotedge.service
+reboot
+//systemctl daemon-reload
+//systemctl restart iotedge.service
 ```
 
 ### 2.2 Connect your IPCamera to Wi-Fi AP or ethernet router.
