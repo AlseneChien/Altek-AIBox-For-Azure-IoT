@@ -73,7 +73,7 @@ You may searh relative informathin how to install docker at your host.
 To simplify dependences installion of tensorflow, we choose docker container with tensorflow as practice at this scection. 
 - Download 
 ```
-docker pull tensorflow/tensorflow)
+docker pull tensorflow/tensorflow
 ```
 - Run 
 ```
