@@ -6,9 +6,9 @@ How to have AI model running at AIBox
 # Table of Contents
 
 -   [Introduction](#Introduction)
--   [Part 1: Prepare your AI Models for AIBox](#part_1)
--   [Part 2: Deply AI Model and Start Inference Running](#part_2)
--   [Part 3: Troubleshooting](#Step-5-Troubleshooting)
+-   [Part 1: Prepare AI Models for AIBox](#part_1)
+-   [Part 2: Config AI Models for Inference Running](#part_2)
+-   [Part 3: Troubleshooting](#part_3)
 
 
 <a name="Introduction"></a>
@@ -16,10 +16,10 @@ How to have AI model running at AIBox
 
 **About this document**
 
-This document describes how to cover your AI Models, then deploy models to your AIBox via Azure Iot Hub.
+This document describes how to cover your AI Models at host, then config for inference running at AIBox.
 
 <a name="part_1"></a>
-# Part 1: Prepare your AI Models for AIBox
+# Part 1: Prepare AI Models for AIBox
 ## 1.1 Install SNPE SDK
 
 AIBox support edge computing for vision inference, basing on Qualcomm Snapdragon Neural Processing Engine (SNPE). You can refer to [SNPE SDK document](https://developer.qualcomm.com/docs/snpe/overview.html) for more detail
@@ -104,7 +104,7 @@ Then, you have to modify your own lable.txt and va-snpe-engine-library_config.js
 
 
 <a name="part_2"></a>
-# Part 2: Deply AI Model and Start Inference Running
+# Part 2: Config AI Models for Inference Running
 
 ## 2.1 Prepare DLC/Config Json/Lable text / model config
 
@@ -134,13 +134,15 @@ AI models patch at ModelConfig_1.txt would direct to "/data/misc/camera/altekDLC
 
 If you already [connect your AIBox with IPCameras](./aibox-linux-for-edge.md), inference will be run automatically once correct model config files are detected inside device.
 
-## 2.2 Prepare docker container to deploy AI Models
+## 2.2 Deploy to AIBox and star running
 
-## 2.3 Deploy by Azure Iot Hub
+### Deploy by Azure Iot Hub
+
+AIBox is compatible with Azure Iot Hub. It is allowable to deploy AI models to AIBox via Azure Cloud. You can refer to [Deploy AI by Azure](./Deploy_AI_By_Azure.md)
 
 
-<a name="Step-5-Troubleshooting"></a>
-# Step 3: Troubleshooting
+<a name="part_3"></a>
+# Part 3: Troubleshooting
 
 Please contact engineering support on **<alsenechien@altek.com.tw>** for help with troubleshooting.
   

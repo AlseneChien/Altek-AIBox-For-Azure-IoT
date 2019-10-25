@@ -103,6 +103,7 @@ Once ssh is available, you can use "ifconfig" to check network configurations
 
 #### 2.1.6 Update Azure IoTEdge Device connect string via SSH
 
+AIBox support Azure Iot Hub. It can be one Azure Iot Edge Device.
 If you already [create your own connect string for Auzre IotEdge Device](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux#deploy-a-module), you may use below shell cmd via SSH to update connect string into device.
 
 ```
@@ -202,7 +203,7 @@ To Be Updated
 <a name="NextSteps"></a>
 # Step 4: Next steps
 
-You can move to [How to have AI model running at AIBox](./AI_Model_to_AIBox_via_Azure_cloud.md)
+You can move to [How to have AI model running at AIBox](./AI_Model_to_AIBox.md)
 
 <a name="Step-5-Troubleshooting"></a>
 # Step 5: Troubleshooting
