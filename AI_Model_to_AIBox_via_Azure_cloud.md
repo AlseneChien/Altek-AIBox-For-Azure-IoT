@@ -115,17 +115,20 @@ Then, prepare [model config file](./VAM/ModelConfig_1.txt) to link camera stream
 
 You can prepare 2 sets into AIBox as below to allow run 2 AI models at 2 different cameras streaming.
 
+```
 >Camera 1
 >> /data/misc/camera/ModelConfig_1.txt
 >> /data/misc/camera/altekDLC1/va-snpe-engine-library_config.json
 >> /data/misc/camera/altekDLC1/mobilenet-SSD.dlc
 >> /data/misc/camera/altekDLC1/coco_labels.txt
-
+```
+```
 >Camera 2
 >> /data/misc/camera/ModelConfig_2.txt
 >> /data/misc/camera/altekDLC2/va-snpe-engine-library_config.json
 >> /data/misc/camera/altekDLC2/mobilenet-SSD.dlc
 >> /data/misc/camera/altekDLC2/coco_labels.txt
+```
 
 AI models patch at ModelConfig_1.txt would direct to "/data/misc/camera/altekDLC1/", and AI models patch at ModelConfig_2.txt would direct to "/data/misc/camera/altekDLC2/"
 
