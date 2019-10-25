@@ -106,10 +106,28 @@ Then, you have to modify your own lable.txt and va-snpe-engine-library_config.js
 <a name="part_2"></a>
 # Part 2: Deply AI Model and Start Inference Running
 
-## 2.1 Prepare DLC/Config Json/Lable text 
+## 2.1 Prepare DLC/Config Json/Lable text / model config
 
-You have to prepare your DLC/Config Json/Lable text as [Part 1: Prepare your AI Models for AIBox](#part_1) in advance.
-Then, prepare config file to link camera streaming with inference engine.
+You have to prepare your DLC/SNPE Config Json/Lable text as [Part 1: Prepare your AI Models for AIBox](#part_1) in advance.
+Then, prepare [model config file](./VAM/ModelConfig_1.txt) to link camera streaming with video analytic engine. You have to noted "file path in AIBox", which you plan to put your DLC/SNPE Config Json/Lable text into .
+
+#### Take 2 camera use cases for example.
+
+You can prepare 2 sets into AIBox as below to allow run 2 AI models at 2 different cameras streaming.
+
+>Camera 1
+>> /data/misc/camera/ModelConfig_1.txt
+>> /data/misc/camera/altekDLC1/va-snpe-engine-library_config.json
+>> /data/misc/camera/altekDLC1/mobilenet-SSD.dlc
+>> /data/misc/camera/altekDLC1/coco_labels.txt
+
+>Camera 2
+>> /data/misc/camera/ModelConfig_2.txt
+>> /data/misc/camera/altekDLC2/va-snpe-engine-library_config.json
+>> /data/misc/camera/altekDLC2/mobilenet-SSD.dlc
+>> /data/misc/camera/altekDLC2/coco_labels.txt
+
+AI models patch at ModelConfig_1.txt would direct to "/data/misc/camera/altekDLC1/", and AI models patch at ModelConfig_2.txt would direct to "/data/misc/camera/altekDLC2/"
 
 ## 2.2 Prepare docker container to deploy AI Models
 
