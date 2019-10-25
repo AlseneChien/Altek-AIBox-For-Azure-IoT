@@ -129,6 +129,8 @@ You can prepare 2 sets into AIBox as below to allow run 2 AI models at 2 differe
 
 AI models patch at ModelConfig_1.txt would direct to "/data/misc/camera/altekDLC1/", and AI models patch at ModelConfig_2.txt would direct to "/data/misc/camera/altekDLC2/"
 
+If you already [connect your AIBox with IPCameras](./aibox-linux-for-edge.md), inference will be run automatically once correct model config files are detected inside device.
+
 ## 2.2 Prepare docker container to deploy AI Models
 
 ## 2.3 Deploy by Azure Iot Hub
