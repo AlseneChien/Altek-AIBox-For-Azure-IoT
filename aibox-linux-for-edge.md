@@ -138,11 +138,22 @@ At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you
 
  ![](./images/ap_webpage4.png)
 
-You have to input username/password for Onvif IPCamera  to login. To simplify operating scenarios, all IPCameras’ account recommend be identical. Then, click IPC link, preview start
+You have to input username/password for Onvif IPCamera  to login. To simplify operating scenarios, all IPCameras’ account recommend be identical. Then, click IPC link to preview start at web
 
  ![](./images/ap_webpage5.png)
 
-### 2.4 Reset your network configuration
+ ### 2.4 Config your display out via Web UI
+If you would like have start video analytic or HDMI display, you have to config your display out via Web UI
+
+![](./images/TVOut_config1.png)
+
+Click "Reflash" to scan avaialble IPCameras, then enable x1~x4 cameras as below
+
+Remember to click "Save". After saving configuration, AIBox will reconnect cameras automatically while AIBox boot-up next time.
+
+![](./images/TVOut_config2.png)
+
+### 2.5 Reset your network configuration
 Pinghole reset button as below. Network configuration will be reset
 
 ![](./images/pinghole.png)
