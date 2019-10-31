@@ -148,9 +148,9 @@ except subprocess.CalledProcessError as e:
 
 ![](./images/Deploy_Config_4.png)
 
- 8. Prefer to [Part 1](#part_1) to [get connection string](#save_conectStr)
+8. Prefer to [Part 1](#part_1) to [get connection string](#save_conectStr)
 
-9. Refer to [Quick Start Guiding for AIBox By Azure](./aibox-linux-for-edge.md) to setup network configuration of AIBox.  
+9. Refer to [Quick Start Guiding for AIBox By Azure](./aibox-linux-for-edge.md) to setup network configuration of AIBox. Remember save your display out config before rebooting AIBox.
 
 You may use below shell cmd via SSH to update connect string into device.
 
