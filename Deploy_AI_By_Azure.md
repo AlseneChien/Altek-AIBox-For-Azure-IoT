@@ -55,10 +55,9 @@ In the Azure portal, IoT Edge devices would be created and managed separately fr
 <a name="part_2"></a>
 # Part 2: Create your IotEdge Module for AIBox
 
-You have to create one IotEdge Module, running at AIBox.
-Please refer to [link](https://docs.microsoft.com/zh-tw/azure/iot-edge/module-development) for detail. 
+You have to create one edge device Module, running at AIBox. Please refer to [link](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-python-module#create-a-container-registry) for detail. 
 
-You may register [docker hub](https://hub.docker.com/) account and public your container at docker hub (ex.  Account/folder:tagName)
+May need register [docker hub](https://hub.docker.com/) account and public your container at docker hub (ex.  Account/folder:tagName)
 
 Follows are some sample code by python for AIBox
 - Model Deployment
