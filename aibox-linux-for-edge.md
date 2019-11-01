@@ -138,7 +138,7 @@ At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you
 
  ![](./images/ap_webpage4.png)
 
-You have to input username/password for Onvif IPCamera  to login. To simplify operating scenarios, all IPCameras’ account recommend be identical. Then, click IPC link to preview start at web
+You have to input username/password for Onvif IPCamera  to login. To simplify operating scenarios, all IPCameras’ account recommend be identical. Then, click camera link to start preview at web
 
  ![](./images/ap_webpage5.png)
 

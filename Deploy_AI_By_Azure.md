@@ -8,7 +8,8 @@ How to deploy AI model to AIBox by Azure
 -   [Introduction](#Introduction)
 -   [Part 1: Config Azure Iot Hub](#part_1)
 -   [Part 2: Create your IotEdge Module for AIBox](#part_2)
--   [Part 3: Deployment by Azure](#part_3)
+-   [Part 3: Config your IoT Edge Device](#part_3)
+-   [Part 4: Deploy to your AIBox](#part_4)
 
 
 <a name="Introduction"></a>
@@ -103,7 +104,7 @@ except subprocess.CalledProcessError as e:
 
 
 <a name="part_3"></a>
-# Part 3: Deployment by Azure
+# Part 3: Config your IoT Edge Device
 
 1.	Select your IoT edge device, click on Set modules
 
@@ -147,9 +148,62 @@ except subprocess.CalledProcessError as e:
 
 ![](./images/Deploy_Config_4.png)
 
-8. Prefer to [Part 1](#part_1) to [get connection string](#save_conectStr)
+<a name="part_4"></a>
+# Part 4: Deploy to your AIBox
 
-9. Refer to [Quick Start Guiding for AIBox By Azure](./aibox-linux-for-edge.md) to setup network configuration of AIBox. Remember save your display out config before rebooting AIBox.
+You can follow below steps to deploy modules to AIBox
+
+1. Refer to [Part 1](#part_1) to [get connection string](#save_conectStr)
+
+2. Refer to [Quick Start Guiding for AIBox By Azure](./aibox-linux-for-edge.md) to setup network configuration of AIBox. Remember save your display out config before rebooting AIBox.
+
+3.  Update connect string via ssh. Then, reboot device.
+
+## Tutorials and Examples
+
+### Connect your AIBox with PC via Wi-Fi
+At your PC side, please connect to a Wi-Fi network, named as altek_edgebox**** (**** is the last 4 characters of the device’s Wi-Fi MAC address, e.g. altek_edgebox9613). Then, you can follow step 1.1 or 1.2 to redirect AIBox network to Wi-Fi AP or Ethernet router. Password of AIBox AP is "12345678"
+
+![](./images/Pc_network.png)
+
+### Direct your AIBox to a Wi-Fi AP (internet available for Azure)
+
+Open web browser (e.g. Chrome) by link http://192.168.143.1/ to  AP setting webpage. 
+Then, input SSID/Password for one internet-available Wi-Fi AP. AIBox nework will be redirected to your assigned Wi-Fi AP.
+
+![](./images/ap_webpage1.png) 
+
+### Config your IPCamera via Web UI
+
+Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config webpage (http://192.168.143.1:9080)
+
+At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you can press "Refresh“ to scan again.
+
+You have to input username/password for Onvif IPCamera  to login. To simplify operating scenarios, all IPCameras’ account recommend be identical. Then, click camera link which you perfer start preview at web
+
+ ![](./images/ap_webpage5.png)
+
+ ### Config your display out via Web UI
+You have to config your display out via Web UI
+
+![](./images/TVOut_config1.png)
+
+Click "Reflash" to scan avaialble IPCameras, then enable x1~x4 cameras as below
+
+Remember to click "Save". After saving configuration, AIBox will reconnect cameras automatically while AIBox boot-up next time.
+
+![](./images/TVOut_config2.png)
+
+### Update connect string via SSH
+If you already complete above network settings, you can enter linux shell via SSH.
+Information for SSH access will be below
+-  IP of SoftAP at AIBox: 192.168.143.1
+-  Account: root
+-  Password: oelinux123
+
+Terminal, like putty, will be available for ssh access
+
+ ![](./images/putty.png)
 
 You may use below shell cmd via SSH to update connect string into device.
 
@@ -165,3 +219,29 @@ reboot
 //systemctl daemon-reload
 //systemctl restart iotedge.service
 ```
+
+### Inference running at AIBox
+
+After device reboot, you may wait for minutes, depending on internet througput, to complete modules download from Azure to AIBox.
+
+You can check by below cmd via SSH
+
+```
+docker ps
+```
+There should be 3 containers, edgeAgent, edgeHub, and your AIBox Module, running inside docker.
+
+![](./images/docker_ps.png)
+
+
+You can check detail logs for each containers by below cmds via SSH
+
+```
+docker logs -f edgeAgent
+docker logs -f edgeHub
+docker logs -f your_AIBox_Module
+```
+
+HDMI display is also available to streaming out with bounding box UI.
+
+![](./images/hdmiout.png)
