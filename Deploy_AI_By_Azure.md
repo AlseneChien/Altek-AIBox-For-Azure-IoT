@@ -225,9 +225,9 @@ There should be 3 containers, edgeAgent, edgeHub, and your AIBox Module, running
 
 ## 5.4 Config your IPCamera via Web UI
 
-Power on you IPCameras. If you have ever config relative setting as below, AIBox will collect camera streaming to apply inference on edge side. (You can ignore below 2 steps if your IPCameras have been pairted with AIBox already)
+Power on you IPCameras. If you have ever config relative setting as below, AIBox will collect camera streaming to apply inference on edge side. (You can ignore "5.4.1" an "5.4.2" if your IPCameras have been paired with AIBox already)
 
-### View preview at Web UI
+### 5.4.1 View preview at Web UI
 Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config webpage (http://192.168.143.1:9080)
 
 At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you can press "Refresh“ to scan again.
@@ -236,7 +236,7 @@ You have to input username/password for Onvif IPCamera  to login. To simplify op
 
  ![](./images/ap_webpage5.png)
 
- ### Config your display out via Web UI
+ ### 5.4.2 Config your display out via Web UI
 You have to config your display out via Web UI
 
 ![](./images/TVOut_config1.png)
