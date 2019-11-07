@@ -10,6 +10,7 @@ How to deploy AI model to AIBox by Azure
 -   [Part 2: Create your IotEdge Module for AIBox](#part_2)
 -   [Part 3: Config your IoT Edge Device](#part_3)
 -   [Part 4: Deploy to your AIBox](#part_4)
+-   [Part 5: Tutorials and Examples](#part_5)
 
 
 <a name="Introduction"></a>
@@ -159,22 +160,74 @@ You can follow below steps to deploy modules to AIBox
 
 3.  Update connect string via ssh. Then, reboot device.
 
-## Tutorials and Examples
+<a name="part_5"></a>
+# Part 5: Tutorials and Examples
 
-### Connect your AIBox with PC via Wi-Fi
+Power on your AIBox, then wait for status LED as below before further actions
+
+![](./images/AIBoxLED_1.png)
+
+## 5.1 Connect your AIBox with PC via Wi-Fi
 At your PC side, please connect to a Wi-Fi network, named as altek_edgebox**** (**** is the last 4 characters of the device’s Wi-Fi MAC address, e.g. altek_edgebox9613). Then, you can follow step 1.1 or 1.2 to redirect AIBox network to Wi-Fi AP or Ethernet router. Password of AIBox AP is "12345678"
 
 ![](./images/Pc_network.png)
 
-### Direct your AIBox to a Wi-Fi AP (internet available for Azure)
+## 5.2 Direct your AIBox to a Wi-Fi AP (internet available for Azure)
 
 Open web browser (e.g. Chrome) by link http://192.168.143.1/ to  AP setting webpage. 
 Then, input SSID/Password for one internet-available Wi-Fi AP. AIBox nework will be redirected to your assigned Wi-Fi AP.
 
 ![](./images/ap_webpage1.png) 
 
-### Config your IPCamera via Web UI
+## 5.3 Update connect string via SSH
+If you already complete above network settings, you can enter linux shell via SSH.
+Information for SSH access will be below
+-  IP of SoftAP at AIBox: 192.168.143.1
+-  Account: root
+-  Password: oelinux123
 
+Terminal, like putty, will be available for ssh access
+
+ ![](./images/putty.png)
+
+## Update conenct string via SSH
+
+You may use below shell cmd via SSH to update connect string into device.
+
+```
+sed -i '/ device_connection_string: /c\  device_connection_string: "HostName={hub_name}.azure-devices.net;DeviceId=MyEdgeDeviceName;SharedAccessKey={key}"' /etc/iotedge/config.yaml
+```
+
+Then, you can use below cmd to reboot AIBox via SSH
+Wait for minutes to see all LED off, then have Power-On status
+
+```
+reboot -f
+```
+
+## Wait for your moduel deployment
+
+After device reboot, wait for AIBOX to connect to Wi-Fi AP. LED will show as below onec internet is ready.
+
+![](./images/AIBoxLED_2.png)
+
+you may wait for minutes, depending on internet througput, to complete modules download from Azure to AIBox.
+
+You can check by below cmd via SSH
+
+```
+docker ps
+```
+There should be 3 containers, edgeAgent, edgeHub, and your AIBox Module, running inside docker.
+
+![](./images/docker_ps.png)
+
+
+## 5.4 Config your IPCamera via Web UI
+
+Power on you IPCameras. If you have ever config relative setting as below, AIBox will collect camera streaming to apply inference on edge side. (You can ignore below 2 steps if your IPCameras have been pairted with AIBox already)
+
+### View preview at Web UI
 Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config webpage (http://192.168.143.1:9080)
 
 At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you can press "Refresh“ to scan again.
@@ -194,53 +247,38 @@ Remember to click "Save". After saving configuration, AIBox will reconnect camer
 
 ![](./images/TVOut_config2.png)
 
-### Update connect string via SSH
-If you already complete above network settings, you can enter linux shell via SSH.
-Information for SSH access will be below
--  IP of SoftAP at AIBox: 192.168.143.1
--  Account: root
--  Password: oelinux123
+## 5.5 Inference running at AIBox
 
-Terminal, like putty, will be available for ssh access
+Wait for IPCameras connecting to your AIBox. Once connection is ready, LED status will show as below
 
- ![](./images/putty.png)
+![](./images/AIBoxLED_3.png)
 
-You may use below shell cmd via SSH to update connect string into device.
 
+Then, force to restart docker service via SSH.
 ```
-sed -i '/ device_connection_string: /c\  device_connection_string: "HostName={hub_name}.azure-devices.net;DeviceId=MyEdgeDeviceName;SharedAccessKey={key}"' /etc/iotedge/config.yaml
+systemctl restart docker.service
 ```
 
-Then, you can use below cmd to reboot AIBox via SSH
-Wait for minutes to see all LED off, then have Power-On status
-
-```
-reboot
-//systemctl daemon-reload
-//systemctl restart iotedge.service
-```
-
-### Inference running at AIBox
-
-After device reboot, you may wait for minutes, depending on internet througput, to complete modules download from Azure to AIBox.
-
-You can check by below cmd via SSH
-
+Wait for iot edge runtime ready to start inference. You can check status by below cmd via SSH
 ```
 docker ps
 ```
-There should be 3 containers, edgeAgent, edgeHub, and your AIBox Module, running inside docker.
 
 ![](./images/docker_ps.png)
 
-
-You can check detail logs for each containers by below cmds via SSH
+And also can check detail logs for each containers by below cmds via SSH
 
 ```
 docker logs -f edgeAgent
 docker logs -f edgeHub
 docker logs -f your_AIBox_Module
 ```
+
+Take Altek AIBOXTest Module for example
+Metadata will be streaming out continually to IoT Hub. And you can get inference result by docker logs
+
+![](./images/logbyAIbox.png)
+
 
 HDMI display is also available to streaming out with bounding box UI.
 

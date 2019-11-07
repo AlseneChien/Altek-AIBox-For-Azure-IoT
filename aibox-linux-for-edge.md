@@ -114,7 +114,7 @@ Then, you can use below cmd to reboot AIBox via SSH
 Wait for minutes to see all LED off, then have Power-On status
 
 ```
-reboot
+reboot -f
 //systemctl daemon-reload
 //systemctl restart iotedge.service
 ```
