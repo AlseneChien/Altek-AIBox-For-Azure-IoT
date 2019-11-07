@@ -279,6 +279,9 @@ Metadata will be streaming out continually to IoT Hub. And you can get inference
 
 ![](./images/logbyAIbox.png)
 
+Or mointor metadata from cloud via VS Code
+
+![](./images/VSCode.png)
 
 HDMI display is also available to streaming out with bounding box UI.
 
