@@ -172,6 +172,7 @@ At your PC side, please connect to a Wi-Fi network, named as altek_edgebox**** (
 
 ![](./images/Pc_network.png)
 
+<a name="part_5_2"></a>
 ## 5.2 Direct your AIBox to a Wi-Fi AP (internet available for Azure)
 
 Open web browser (e.g. Chrome) by link http://192.168.143.1/ to  AP setting webpage. 
@@ -179,8 +180,39 @@ Then, input SSID/Password for one internet-available Wi-Fi AP. AIBox nework will
 
 ![](./images/ap_webpage1.png) 
 
-## 5.3 Update connect string via SSH
-If you already complete above network settings, you can enter linux shell via SSH.
+After setting, wait for AIBOX to connect to Wi-Fi AP. Status LED will show as below onec internet is ready.
+
+![](./images/AIBoxLED_2.png)
+
+<a name="part_5_3"></a>
+## 5.3 Config your IPCamera via Web UI
+
+Power on you IPCameras. If you have ever config relative setting as ["5.3.2"](#part_5_3_2), AIBox will collect camera streaming automatically. (You can ignore ["5.4.1"](#part_5_3_1) an ["5.4.2"](#part_5_3_2) if your IPCameras have been paired with AIBox already)
+
+<a name="part_5_3_1"></a>
+### 5.3.1 View preview at Web UI
+Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config webpage (http://192.168.143.1:9080)
+
+At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you can press "Refresh“ to scan again.
+
+You have to input username/password for Onvif IPCamera  to login. To simplify operating scenarios, all IPCameras’ account recommend be identical. Then, click camera link which you perfer start preview at web
+
+ ![](./images/ap_webpage5.png)
+
+<a name="part_5_3_2"></a>
+ ### 5.3.2 Config your display out via Web UI
+You have to config your display out via Web UI
+
+![](./images/TVOut_config1.png)
+
+Click "Reflash" to scan avaialble IPCameras, then enable x1~x4 cameras as below
+
+Remember to click "Save". After saving configuration, AIBox will reconnect cameras automatically while AIBox boot-up next time.
+
+![](./images/TVOut_config2.png)
+
+## 5.4 Update connect string via SSH
+If you already complete [above network settings](#part_5_2), you can enter linux shell via SSH.
 Information for SSH access will be below
 -  IP of SoftAP at AIBox: 192.168.143.1
 -  Account: root
@@ -192,67 +224,40 @@ Terminal, like putty, will be available for ssh access
 
 ## Update conenct string via SSH
 
-You may use below shell cmd via SSH to update connect string into device.
+You have to use below shell cmd via SSH to update connect string into device.
 
 ```
 sed -i '/ device_connection_string: /c\  device_connection_string: "HostName={hub_name}.azure-devices.net;DeviceId=MyEdgeDeviceName;SharedAccessKey={key}"' /etc/iotedge/config.yaml
 ```
 
-Then, you can use below cmd to reboot AIBox via SSH
-Wait for minutes to see all LED off, then have Power-On status
+Then, use below cmd to restart iotedge service.
 
 ```
-reboot -f
+systemctl restart iotedge.service
 ```
 
 ## Wait for your moduel deployment
 
-After device reboot, wait for AIBOX to connect to Wi-Fi AP. LED will show as below onec internet is ready.
-
-![](./images/AIBoxLED_2.png)
-
-you may wait for minutes, depending on internet througput, to complete modules download from Azure to AIBox.
+Please wait for minutes, depending on internet througput, to complete modules download from Azure to AIBox.
 
 You can check by below cmd via SSH
 
 ```
 docker ps
 ```
-There should be 3 containers, edgeAgent, edgeHub, and your AIBox Module, running inside docker.
+There would be 3 containers, edgeAgent, edgeHub, and your AIBox Module, running inside docker.
 
 ![](./images/docker_ps.png)
 
-
-## 5.4 Config your IPCamera via Web UI
-
-Power on you IPCameras. If you have ever config relative setting as below, AIBox will collect camera streaming to apply inference on edge side. (You can ignore "5.4.1" an "5.4.2" if your IPCameras have been paired with AIBox already)
-
-### 5.4.1 View preview at Web UI
-Once Wi-Fi connecting successfully, it will redirect to AIBOX IPC preview/config webpage (http://192.168.143.1:9080)
-
-At IPC preview/configure webpage, all Onvif IPCs are scanned and listed. And you can press "Refresh“ to scan again.
-
-You have to input username/password for Onvif IPCamera  to login. To simplify operating scenarios, all IPCameras’ account recommend be identical. Then, click camera link which you perfer start preview at web
-
- ![](./images/ap_webpage5.png)
-
- ### 5.4.2 Config your display out via Web UI
-You have to config your display out via Web UI
-
-![](./images/TVOut_config1.png)
-
-Click "Reflash" to scan avaialble IPCameras, then enable x1~x4 cameras as below
-
-Remember to click "Save". After saving configuration, AIBox will reconnect cameras automatically while AIBox boot-up next time.
-
-![](./images/TVOut_config2.png)
-
 ## 5.5 Inference running at AIBox
 
-Wait for IPCameras connecting to your AIBox. Once connection is ready, LED status will show as below
+Please confirm your IPCameras have been connected with AIBox before AI running
+
+If IPCamera connection is ready, NETWORK LED status will show as below. And video analytic for AI will be run automatically once model is deployed
 
 ![](./images/AIBoxLED_3.png)
 
+If IPCamera connection is not ready, refer to ["5.3 Config your IPCamera via Web UI"](#part_5_3_2) to connect IPCameras and AIBox
 
 Then, force to restart docker service via SSH.
 ```
