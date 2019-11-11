@@ -261,7 +261,7 @@ If IPCamera connection is not ready, refer to ["5.3 Config your IPCamera via Web
 
 Then, force to restart docker service via SSH.
 ```
-systemctl restart docker.service
+systemctl restart iotedge.service
 ```
 
 Wait for iot edge runtime ready to start inference. You can check status by below cmd via SSH
