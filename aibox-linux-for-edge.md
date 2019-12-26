@@ -15,7 +15,7 @@ Run a simple python sample on Altek AIBox device running embedded Linux by Yocto
 -   [Step 2: Prepare your Device](#PrepareDevice)
 -   [Step 3: Manual Test for Azure IoT Edge on device](#Manual)
 -   [Step 4: Next Steps](#NextSteps)
--   [Step 5: Troubleshooting](#Step-5-Troubleshooting)
+
 
 
 <a name="Introduction"></a>
@@ -220,12 +220,3 @@ To Be Updated
 # Step 4: Next steps
 
 You can move to [How to have AI model running at AIBox](./AI_Model_to_AIBox.md)
-
-<a name="Step-5-Troubleshooting"></a>
-# Step 5: Troubleshooting
-
-Please contact engineering support on **<alsenechien@altek.com.tw>** for help with troubleshooting.
-  
-[setup-devbox-linux]: https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md
-[lnk-setup-iot-hub]: ../setup_iothub.md
-[lnk-manage-iot-hub]: ../manage_iot_hub.md

@@ -8,7 +8,7 @@ How to have AI model running at AIBox
 -   [Introduction](#Introduction)
 -   [Part 1: Prepare AI Models for AIBox](#part_1)
 -   [Part 2: Config AI Models for Inference Running](#part_2)
--   [Part 3: Troubleshooting](#part_3)
+
 
 
 <a name="Introduction"></a>
@@ -141,8 +141,5 @@ If you already [connect your AIBox with IPCameras](./aibox-linux-for-edge.md), i
 AIBox is compatible with Azure Iot Hub. It is allowable to deploy AI models to AIBox via Azure Cloud. You can refer to [Deploy AI by Azure](./Deploy_AI_By_Azure.md)
 
 
-<a name="part_3"></a>
-# Part 3: Troubleshooting
 
-Please contact engineering support on **<alsenechien@altek.com.tw>** for help with troubleshooting.
   
